@@ -30,7 +30,7 @@ README.md
 # сборка без примеров
 $ cd repo
 $ cmake -H. -B_builds
-$ cmake --builds _builds
+$ cmake _builds
 ```
 
 Скрипты для п.4 (2)
@@ -38,7 +38,7 @@ $ cmake --builds _builds
 # сборка с примерами
 $ cd repo
 $ cmake -H. -B_builds -DBUILD_EXAMPLES=ON
-$ cmake --builds _builds
+$ cmake _builds
 $ ls _builds/init  # [✔]
 $ ls _builds/pop   # [✔] 
 $ ls _builds/push  # [✔]
