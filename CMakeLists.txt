@@ -4,7 +4,7 @@ project(Stack_2)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-option(BUILD_EXAMPLES "Build examples" ON)
+option(BUILD_EXAMPLES "Build examples" OFF)
 
 add_library(main STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/main.cpp)
 
