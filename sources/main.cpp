@@ -1,43 +1,63 @@
-#include "stack.hpp"
+#include <iostream>
+#include "Stack.hpp"
+using namespace std;
 
-void foo_init() {
-	cout << endl << "Start init func" << endl;
-	Stack<int> IntArr;
-	Stack<char> CharArr;
-	cout << "Reply\t" << "Created 2 arrays: IntArr & CharArr." << endl << endl;
-}
+int main() {
+	try {
+		cout << endl << "Stack of Int elements" << endl;
+		Stack<int> Stack_int(7); 
+    //add
+		Stack_int.push(1);
+		Stack_int.push(2);
+		Stack_int.push(3);
+		Stack_int.push(4);
+		Stack_int.push(5);
+		Stack_int.push(6);
+		Stack_int.push(7);
 
-void foo_push() {
-	cout << endl << "Start push func" << endl;
-	Stack<int> IntArr;
-	for(int i = 0; i < 10; i++) { IntArr.push(i*3); }
-		
-	cout << "Reply\t";
-	for(size_t j = 0; j < IntArr.count(); j++) { cout << IntArr[j] << " "; }
-	cout << endl << endl;
-}
+    //delete Char
+		for(int i = 0; i < 7; i++) {
+			cout << Stack_int.pop() << endl;
+		}
+		cout << endl << endl;
 
-void foo_pop() {
-	cout << endl << "Start pop func" << endl;
-	Stack<double> DoubleArr;
-	for(int i = 0; i < 10; i++) { DoubleArr.push(double(i)); }
-		
-	cout << "Reply\t";
-	for(int j = 0; j < 7; j++) { cout << DoubleArr.pop() << " "; }
-	cout << endl << endl;
-}
+		cout << "Stack of Char elements" << endl;
+		Stack<char> Stack_char(5); 
+    //add
+    Stack_char.push('e');
+		Stack_char.push('c');
+		Stack_char.push('a');
+		Stack_char.push('e');
+		Stack_char.push('p');
 
-void foo_empty() {
-	cout << endl << "Start empty func" << endl;
-	Stack<char> CharArr;
+    //delete char
+		for(int i = 0; i < 5; i++) {
+			cout << Stack_char.pop();
+		}
+		cout << endl << endl;
 
-	char text[] = "srehtorb yninihsreV";
+    cout << "Stack of Char elements with adding new memory" << endl;
+		Stack<char> Stack_char_Z(5); 
+    
+    			Stack_char_Z.push('r');
+		Stack_char_Z.push('a');
+		Stack_char_Z.push('t');
+		Stack_char_Z.push('i');
+		Stack_char_Z.push('u');
+    		Stack_char_Z.push('g');
+    		Stack_char_Z.push(' ');
+		Stack_char_Z.push('k');
+		Stack_char_Z.push('c');
+		Stack_char_Z.push('o');
+		Stack_char_Z.push('R');
 
-	for(int i = 0; i < strlen(text); i++) { CharArr.push(text[i]); }
+   
+    for(int i = 0; i < 11; i++) {
+			cout << Stack_char_Z.pop();
+		}
+		cout << endl << endl;
 
-	cout << "Reply\t";
-	while(!CharArr.empty()) {
-		cout << CharArr.pop() << " ";
+	} catch(const exception& e) { 
+		cout << e.what() << endl;
 	}
-	cout << endl << endl;
 }
